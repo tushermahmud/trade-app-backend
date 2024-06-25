@@ -1,7 +1,6 @@
 const axios = require('axios');
 const getTradeData = async () => {
     try {
-         try {
            const masterTradeResponse = await axios.get(process.env.LAMBDA_URL);
            const masterTrade = masterTradeResponse.data;
            const mt4LoginResponse = await axios.get(
@@ -22,9 +21,6 @@ const getTradeData = async () => {
              }
            );
            return tradeResponse.data;
-         } catch (error) {
-           console.log("Error processing trade:", error.message);
-         }
     } catch (error) {
         console.log("Error processing trade:", error.message);
     }
