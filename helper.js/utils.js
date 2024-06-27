@@ -22,7 +22,7 @@ const getTradeData = async () => {
            );
            return tradeResponse.data;
     } catch (error) {
-        console.log("Error processing trade:", error.message);
+        return  error;
     }
 }
 
